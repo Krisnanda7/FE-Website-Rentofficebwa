@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { Office } from "../types/type";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 export default function Details() {
   const { slug } = useParams<{ slug: string }>();
@@ -344,6 +345,7 @@ export default function Details() {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }

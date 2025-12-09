@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import OfficeCard from "../components/OfficeCard";
 import type { City } from "../types/type";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function CityDetails() {
   const { slug } = useParams<{ slug: string }>();
@@ -88,6 +89,7 @@ export default function CityDetails() {
           ))}
         </div>
       </section>
+      <Footer />
     </>
   );
 }

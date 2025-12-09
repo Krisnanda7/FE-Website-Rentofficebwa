@@ -58,16 +58,25 @@ export default function BrowseOfficeWrapper() {
   return (
     <section
       id="Fresh-Space"
-      className="flex flex-col gap-[30px] w-full max-w-[1130px] mx-auto mt-[100px] mb-[120px] "
+      className="flex flex-col gap-6 md:gap-[30px] w-full max-w-[1130px] mx-auto mt-8 md:mt-12 lg:mt-[100px] mb-8 md:mb-12 lg:mb-[120px] px-4 sm:px-6 md:px-8 lg:px-0"
     >
-      <h2 className="font-bold text-[32px] leading-[48px] text-nowrap text-center">
-        Browse Our Fresh Space.
-        <br />
-        For Your Better Productivity.
-      </h2>
-      <div className="grid grid-cols-3 gap-[30px]">
+      {/* Title Section */}
+      <div className="text-center">
+        <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[32px] leading-tight sm:leading-[40px] md:leading-[48px]">
+          Browse Our Fresh Space.
+          <br />
+          For Your Better Productivity.
+        </h2>
+      </div>
+
+      {/* Grid Section - All offices shown at once */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-[30px]">
         {offices.map((office) => (
-          <Link key={office.id} to={`/office/${office.slug}`}>
+          <Link
+            key={office.id}
+            to={`/office/${office.slug}`}
+            className="transform transition-transform duration-300 hover:scale-[1.02]"
+          >
             <OfficeCard office={office} />
           </Link>
         ))}

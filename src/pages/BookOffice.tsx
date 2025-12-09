@@ -5,6 +5,7 @@ import type z from "zod";
 import type { Office } from "../types/type";
 import { bookingSchema } from "../types/validationBooking";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function BookOffice() {
   const { slug } = useParams<{ slug: string }>();
@@ -387,6 +388,7 @@ export default function BookOffice() {
           </button>
         </div>
       </form>
+      <Footer />
     </>
   );
 }

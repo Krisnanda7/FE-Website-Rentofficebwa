@@ -4,6 +4,7 @@ import { BookingDetails } from "../types/type";
 import type z from "zod";
 import { viewBookingSchema } from "../types/validationBooking";
 import axios from "axios";
+import Footer from "../components/Footer";
 
 export default function CheckBooking() {
   const [formData, setFormData] = useState({
@@ -315,6 +316,7 @@ export default function CheckBooking() {
           </div>
         )}
       </section>
+      <Footer />
     </>
   );
 }

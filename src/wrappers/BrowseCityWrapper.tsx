@@ -38,24 +38,50 @@ export default function BrowseCityWrapper() {
   }
 
   return (
-    <section id="Cities" className="flex flex-col gap-[30px] mt-[100px]">
-      <div className="w-full max-w-[1130px] mx-auto flex items-center justify-between">
-        <h2 className="font-bold text-[32px] leading-[48px] text-nowrap">
+    <section
+      id="Cities"
+      className="flex flex-col gap-6 md:gap-[30px] mt-8 md:mt-12 lg:mt-[100px] px-4 sm:px-6 md:px-8 lg:px-0"
+    >
+      {/* Header - Responsif */}
+      <div className="w-full max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+        <h2 className="font-bold text-2xl sm:text-3xl lg:text-[32px] leading-tight sm:leading-[42px] lg:leading-[48px] text-center sm:text-left">
           You Can Choose <br />
           Our Favorite Cities
         </h2>
-        <a href="#" className="rounded-full  py-3 px-5 bg-white font-bold">
+        <a
+          href="#"
+          className="rounded-full py-2 sm:py-3 px-4 sm:px-5 bg-white font-bold text-sm sm:text-base border sm:border-0 hover:text-[#0A2463] transition-colors"
+        >
           Explore All City
         </a>
       </div>
+
+      {/* Swiper Container - Responsif */}
       <div className="swiper w-full">
         <div className="swiper-wrapper">
           <Swiper
             direction={"horizontal"}
             slidesPerView={"auto"}
-            spaceBetween={30}
-            slidesOffsetBefore={30}
-            slidesOffsetAfter={30}
+            spaceBetween={16}
+            slidesOffsetBefore={16}
+            slidesOffsetAfter={16}
+            breakpoints={{
+              320: {
+                spaceBetween: 16,
+                slidesOffsetBefore: 16,
+                slidesOffsetAfter: 16,
+              },
+              768: {
+                spaceBetween: 20,
+                slidesOffsetBefore: 20,
+                slidesOffsetAfter: 20,
+              },
+              1024: {
+                spaceBetween: 30,
+                slidesOffsetBefore: 30,
+                slidesOffsetAfter: 30,
+              },
+            }}
           >
             {cities.map((city) => (
               <SwiperSlide

@@ -1419,6 +1419,144 @@ body {
   opacity: 0;
 }
 
+/* Responsive Utility Classes */
+
+/* Default (mobile) - block */
+.block {
+  display: block !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Tablet (md: 768px) */
+@media (min-width: 768px) {
+  .md\:block {
+    display: block !important;
+  }
+
+  .md\:hidden {
+    display: none !important;
+  }
+}
+
+/* Desktop (lg: 1024px) */
+@media (min-width: 1024px) {
+  .lg\:block {
+    display: block !important;
+  }
+
+  .lg\:hidden {
+    display: none !important;
+  }
+
+  .lg\:flex {
+    display: flex !important;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .lg\:items-center {
+    align-items: center !important;
+  }
+
+  .lg\:justify-center {
+    justify-content: center !important;
+  }
+
+  .lg\:text-left {
+    text-align: left !important;
+  }
+
+  .lg\:text-nowrap {
+    white-space: nowrap !important;
+  }
+
+  /* Padding untuk desktop */
+  .lg\:px-\[120px\] {
+    padding-left: 120px !important;
+    padding-right: 120px !important;
+  }
+
+  .lg\:pt-\[150px\] {
+    padding-top: 150px !important;
+  }
+
+  .lg\:pb-10 {
+    padding-bottom: 2.5rem !important;
+  }
+
+  .lg\:gap-10 {
+    gap: 2.5rem !important;
+  }
+
+  .lg\:gap-\[100px\] {
+    gap: 100px !important;
+  }
+
+  .lg\:gap-\[30px\] {
+    gap: 30px !important;
+  }
+
+  .lg\:gap-\[50px\] {
+    gap: 50px !important;
+  }
+
+  .lg\:gap-\[60px\] {
+    gap: 60px !important;
+  }
+
+  .lg\:mt-\[100px\] {
+    margin-top: 100px !important;
+  }
+
+  .lg\:h-\[38px\] {
+    height: 38px !important;
+  }
+
+  .lg\:h-\[720px\] {
+    height: 720px !important;
+  }
+
+  .lg\:text-\[32px\] {
+    font-size: 32px !important;
+  }
+
+  .lg\:text-\[50px\] {
+    font-size: 50px !important;
+  }
+
+  .lg\:leading-\[48px\] {
+    line-height: 48px !important;
+  }
+
+  .lg\:leading-\[60px\] {
+    line-height: 60px !important;
+  }
+
+  .lg\:leading-\[30px\] {
+    line-height: 30px !important;
+  }
+
+  .lg\:max-w-\[1130px\] {
+    max-width: 1130px !important;
+  }
+}
+
+/* Large Desktop (xl: 1280px) */
+@media (min-width: 1280px) {
+  .xl\:block {
+    display: block !important;
+  }
+
+  .xl\:hidden {
+    display: none !important;
+  }
+}
+
 /* ===== Animasi Fade dan Slide ===== */
 
 /* Fade + Slide Up */
