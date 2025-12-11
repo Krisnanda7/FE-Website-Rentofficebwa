@@ -43,7 +43,10 @@ export default function BrowseCityWrapper() {
       className="flex flex-col gap-6 md:gap-[30px] mt-8 md:mt-12 lg:mt-[100px] px-4 sm:px-6 md:px-8 lg:px-0"
     >
       {/* Header - Responsif */}
-      <div className="w-full max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+      <div
+        id="citybrowse"
+        className="w-full max-w-[1130px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0"
+      >
         <h2 className="font-bold text-2xl sm:text-3xl lg:text-[32px] leading-tight sm:leading-[42px] lg:leading-[48px] text-center sm:text-left">
           You Can Choose <br />
           Our Favorite Cities

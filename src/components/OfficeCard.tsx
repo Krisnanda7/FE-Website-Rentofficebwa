@@ -1,7 +1,7 @@
 import type { Office } from "../types/type";
 
 export default function OfficeCard({ office }: OfficeCardProps) {
-  // const baseURL = "http://127.0.0.1:8000/storage";
+  const baseURL = "http://127.0.0.1:8000/storage";
 
   return (
     <div className="card">
@@ -11,7 +11,7 @@ export default function OfficeCard({ office }: OfficeCardProps) {
             Popular
           </p>
           <img
-            src={`${import.meta.env.VITE_API_URL}/storage/${office.thumbnail}`}
+            src={`${baseURL}/${office.thumbnail}`}
             className="w-full h-full object-cover"
             alt="thumbnails"
           />

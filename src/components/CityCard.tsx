@@ -17,7 +17,7 @@ export default function CityCard({ city }: CityCardProps) {
           <p className="text-white">{city.office_space_count} Office</p>
         </div>
         <img
-          src={`${import.meta.env.VITE_API_URL}/storage/${city.photo}`}
+          src={`${baseURL}/${city.photo}`}
           className="absolute w-full h-full object-cover"
           alt="thumbnails"
         />

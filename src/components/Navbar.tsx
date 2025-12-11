@@ -55,7 +55,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white relative">
       {/* Main Navigation Bar */}
-      <div className="flex items-center justify-between w-full max-w-[1130px] py-4 md:py-[22px] mx-auto px-4 md:px-0">
+      <div className="flex items-center justify-between w-full max-w-[1130px] py-4 md:py-[22px] mx-auto px-4 md:px-0 gap-10">
         {/* Logo */}
         <Link to={`/`} className="z-50">
           <img
@@ -66,7 +66,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation - Hidden on Mobile */}
-        <div className="hidden lg:flex items-center gap-[50px] w-fit animate-fade-in">
+        <div className="hidden lg:flex items-center  animate-fade-in">
           <ul className="flex items-center gap-[50px] w-fit">
             <li className="hover:text-[#447cff]">
               <Link to={`/`}>Browse</Link>
@@ -75,13 +75,11 @@ export default function Navbar() {
               <a href="">Popular</a>
             </li>
             <li className="hover:text-[#447cff]">
-              <a href="">Categories</a>
+              <a href="#citybrowse">Categories</a>
             </li>
+
             <li className="hover:text-[#447cff]">
-              <a href="">Events</a>
-            </li>
-            <li className="hover:text-[#447cff]">
-              <Link to={`/`}>My Booking</Link>
+              <Link to={`/check-booking`}>Check Booking</Link>
             </li>
             {isLoggedIn ? (
               <button
@@ -92,28 +90,27 @@ export default function Navbar() {
               </button>
             ) : (
               <>
-                <li className="bg-[#0A2463] text-white px-4 py-2 rounded-xl font-semibold animate-bounce">
+                <li className="bg-[#0A2463] text-white px-5 py-2 rounded-xl font-semibold animate-bounce">
                   <a href="/login">Login</a>
                 </li>
-                <li className="border border-[#000929] px-4 py-2 rounded-xl font-semibold animate-bounce">
+                <li className="border border-[#000929] px-5 py-2 rounded-xl font-semibold animate-bounce">
                   <a href="/Register">Register</a>
                 </li>
               </>
             )}
+            {/* Contact Us Button - Desktop */}
+            <a
+              href="#"
+              className="flex items-center-safe rounded-full border border-[#000929] py-3  px-5"
+            >
+              <img
+                src="/assets/images/icons/call.svg"
+                className="w-6 h-6"
+                alt="icon"
+              />
+              <span className="font-semibold">Contact Us</span>
+            </a>
           </ul>
-
-          {/* Contact Us Button - Desktop */}
-          <a
-            href="#"
-            className="flex items-center gap-[10px] rounded-full border border-[#000929] py-3 px-5"
-          >
-            <img
-              src="/assets/images/icons/call.svg"
-              className="w-6 h-6"
-              alt="icon"
-            />
-            <span className="font-semibold">Contact Us</span>
-          </a>
         </div>
 
         {/* Mobile Navigation Toggle */}

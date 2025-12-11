@@ -78,7 +78,7 @@ export default function Login() {
 
           <div className="text-center">
             <p className="text-slate-600">
-              Sudah punya akun?{" "}
+              Belum punya akun?{" "}
               <Link
                 to="/register"
                 className="text-blue-600 hover:text-blue-700 font-semibold hover:underline"
