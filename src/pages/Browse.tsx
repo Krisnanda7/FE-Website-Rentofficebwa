@@ -104,7 +104,7 @@ export default function Browse() {
         cheap: "Termurah",
         medium: "Sedang",
         expensive: "Termahal",
-        range1: "< 1 Juta",
+        range1: "< 2.5 Juta",
         range2: "1-3 Juta",
         range3: "> 3 Juta",
       },

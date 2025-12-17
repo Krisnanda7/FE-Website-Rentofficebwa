@@ -63,7 +63,7 @@ export default function BrowseOfficeWrapper({
         const price = office.price || 0;
         switch (filters.price) {
           case "cheap":
-            return price < 3000000;
+            return price < 2500000;
           case "medium":
             return price >= 1000000 && price <= 3000000;
           case "expensive":
