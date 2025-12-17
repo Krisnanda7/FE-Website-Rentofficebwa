@@ -11,6 +11,7 @@ export default function Register() {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+
     try {
       const response = await axios.post(
         "http://127.0.0.1:8000/api/customer/register",
@@ -22,12 +23,10 @@ export default function Register() {
         }
       );
 
-      console.log("Form submit succesfully:", response.data);
-
+      console.log("Register success:", response.data);
       alert("Registrasi berhasil! Silakan login.");
       window.location.href = "/login";
-    } catch (error) {
-      console.error(error.response?.data || error.message);
+    } catch (error: any) {
       alert(
         error.response?.data?.message ||
           "Gagal registrasi, mungkin email sudah terdaftar."
@@ -38,96 +37,89 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A1F44] to-[#0E2A5A] px-4">
       <div className="w-full max-w-md">
-        {/* Main Card */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-10">
-          <div className="mb-8 text-center">
-            <h1 className="text-xl md:text-5xl font-bold text-slate-900 mb-4 leading-tight text-center">
-              CREATE YOUR ACCOUNT
-            </h1>
-            <p className="text-gray-500 text-base md:text-lg">
-              Bergabunglah dengan kami untuk mendapatkan pengalaman terbaik
-              dalam mengelola bisnis Anda.
+        <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-10">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <h1 className="text-2xl font-bold text-gray-900">Create Account</h1>
+            <p className="text-gray-500 mt-2 text-sm">
+              Daftar untuk mulai mengelola bisnis Anda
             </p>
           </div>
 
+          {/* Form */}
           <form onSubmit={handleRegister} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+              <label className="text-sm font-medium text-gray-700">
                 Nama Lengkap
               </label>
               <input
                 type="text"
-                placeholder="Masukkan nama lengkap"
-                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                placeholder="Nama lengkap"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A1F44]"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
-                Email
+              <label className="text-sm font-medium text-gray-700">
+                Email Address
               </label>
               <input
                 type="email"
                 placeholder="nama@email.com"
-                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A1F44]"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700 mb-2">
+              <label className="text-sm font-medium text-gray-700">
                 Password
               </label>
               <input
                 type="password"
                 placeholder="Minimal 8 karakter"
-                className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={8}
+                className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A1F44]"
               />
             </div>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-gray-900 text-white font-medium py-3 rounded-md hover:bg-gray-800 transition duration-300"
+              className="w-full bg-[#0A1F44] text-white font-semibold py-3 rounded-xl hover:bg-[#0E2A5A] transition duration-300 shadow-md disabled:opacity-60"
             >
-              {isLoading ? "Mendaftar..." : "Daftar Sekarang"}
+              {isLoading ? "Mendaftar..." : "Create Account"}
             </button>
           </form>
 
-          <div className="mt-6 text-center">
-            <p className="text-slate-600">
-              Sudah punya akun?{" "}
-              <Link
-                to="/login"
-                className="text-blue-600 hover:text-blue-700 font-semibold hover:underline"
-              >
-                Login di sini
-              </Link>
-            </p>
+          {/* Footer */}
+          <div className="mt-6 text-center text-sm text-gray-600">
+            Sudah punya akun?{" "}
+            <Link
+              to="/login"
+              className="font-semibold text-[#0A1F44] hover:underline"
+            >
+              Login di sini
+            </Link>
           </div>
         </div>
 
-        {/* Footer Text */}
-        <p className="text-center text-sm text-slate-500 mt-6">
+        {/* Legal */}
+        <p className="text-center text-xs text-gray-300 mt-6">
           Dengan mendaftar, Anda menyetujui{" "}
-          <a href="#" className="text-slate-700 hover:underline">
-            Syarat & Ketentuan
-          </a>{" "}
+          <span className="underline cursor-pointer">Syarat & Ketentuan</span>{" "}
           dan{" "}
-          <a href="#" className="text-slate-700 hover:underline">
-            Kebijakan Privasi
-          </a>
+          <span className="underline cursor-pointer">Kebijakan Privasi</span>
         </p>
       </div>
     </div>

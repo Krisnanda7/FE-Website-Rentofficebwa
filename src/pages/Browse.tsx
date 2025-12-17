@@ -104,8 +104,8 @@ export default function Browse() {
         cheap: "Termurah",
         medium: "Sedang",
         expensive: "Termahal",
-        range1: "< 2.5 Juta",
-        range2: "1-3 Juta",
+        range1: "< 3 Juta",
+        range2: "2-3 Juta",
         range3: "> 3 Juta",
       },
       rating: {
@@ -513,8 +513,8 @@ export default function Browse() {
                 <option value="cheap">Termurah</option>
                 <option value="medium">Sedang</option>
                 <option value="expensive">Termahal</option>
-                <option value="range1">Dibawah 1 Juta</option>
-                <option value="range2">1-3 Juta</option>
+                <option value="range1">Dibawah 3 Juta</option>
+                <option value="range2">2-3 Juta</option>
                 <option value="range3">Diatas 3 Juta</option>
               </select>
             </div>
@@ -569,6 +569,7 @@ export default function Browse() {
                 <option value="bandung">Bandung</option>
                 <option value="bali">Bali</option>
                 <option value="yogyakarta">Yogyakarta</option>
+                <option value="magelang">Magelang</option>
               </select>
             </div>
           </div>

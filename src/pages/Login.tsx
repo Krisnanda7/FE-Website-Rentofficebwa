@@ -5,88 +5,87 @@ import { Link } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
       const res = await axios.post(
         "http://127.0.0.1:8000/api/customer/login",
-        {
-          email,
-          password,
-        },
+        { email, password },
         {
           headers: {
             "X-API-KEY": "wkwkwkwkjj0901",
           },
         }
       );
+
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("customer", JSON.stringify(res.data.customer));
       alert("Login berhasil!");
       window.location.href = "/";
-    } catch (error) {
+    } catch {
       alert("Login gagal, periksa email atau password!");
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-3xl shadow-lg max-w-md w-full p-8">
-        <div className="mb-8 text-center">
-          <h1 className="text-xl font-bold text-gray-900 mb-2">LOG IN</h1>
-          <p className="text-gray-600 text-sm md:text-base">
-            Masuk ke akun Anda untuk melanjutkan pengalaman mengelola bisnis
-            Anda.
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A1F44] to-[#0E2A5A] px-4">
+      <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
+          <p className="text-gray-500 mt-2 text-sm">
+            Login untuk melanjutkan pengalaman bisnis Anda
           </p>
         </div>
 
-        <div className="space-y-5">
+        {/* Form */}
+        <form onSubmit={handleLogin} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email
+            <label className="text-sm font-medium text-gray-700">
+              Email Address
             </label>
             <input
               type="email"
               placeholder="nama@email.com"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A1F44]"
+              required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="text-sm font-medium text-gray-700">
               Password
             </label>
             <input
               type="password"
-              placeholder="Masukkan password"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="mt-2 w-full rounded-xl border border-gray-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#0A1F44]"
+              required
             />
           </div>
 
           <button
-            onClick={handleLogin}
-            className="w-full bg-gray-900 text-white font-medium py-3 rounded-md hover:bg-gray-800 transition duration-300"
+            type="submit"
+            className="w-full bg-[#0A1F44] text-white font-semibold py-3 rounded-xl hover:bg-[#0E2A5A] transition duration-300 shadow-md"
           >
-            LOGIN
+            Sign In
           </button>
+        </form>
 
-          <div className="text-center">
-            <p className="text-slate-600">
-              Belum punya akun?{" "}
-              <Link
-                to="/register"
-                className="text-blue-600 hover:text-blue-700 font-semibold hover:underline"
-              >
-                Register di sini
-              </Link>
-            </p>
-          </div>
+        {/* Footer */}
+        <div className="text-center mt-6 text-sm text-gray-600">
+          Belum punya akun?{" "}
+          <Link
+            to="/register"
+            className="font-semibold text-[#0A1F44] hover:underline"
+          >
+            Register di sini
+          </Link>
         </div>
       </div>
     </div>

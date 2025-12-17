@@ -65,13 +65,13 @@ export default function BrowseOfficeWrapper({
           case "cheap":
             return price < 2500000;
           case "medium":
-            return price >= 1000000 && price <= 3000000;
+            return price >= 2000000 && price <= 3000000;
           case "expensive":
             return price > 3000000;
           case "range1":
-            return price < 1000000;
+            return price < 3000000;
           case "range2":
-            return price >= 1000000 && price <= 3000000;
+            return price >= 2000000 && price <= 3000000;
           case "range3":
             return price > 3000000;
           default:
@@ -165,7 +165,7 @@ export default function BrowseOfficeWrapper({
       </div>
 
       {/* Offices Grid */}
-      <div className="w-full max-w-[1130px] mx-auto">
+      <div className="w-full max-w-[1130px] mx-auto mb-24">
         {filteredOffices.length === 0 ? (
           <div className="text-center py-12">
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
