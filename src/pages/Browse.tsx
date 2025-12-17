@@ -500,7 +500,7 @@ export default function Browse() {
           </div>
 
           {/* Main Filters */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Price Filter */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -575,51 +575,7 @@ export default function Browse() {
                 <option value="yogyakarta">Yogyakarta</option>
               </select>
             </div>
-
-            {/* Type Filter */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Tipe Kantor
-              </label>
-              <select
-                value={filters.type}
-                onChange={(e) => handleFilterChange("type", e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0A2463] text-sm md:text-base"
-              >
-                <option value="all">Semua Tipe</option>
-                <option value="private">Private Office</option>
-                <option value="coworking">Co-working Space</option>
-                <option value="meeting">Meeting Room</option>
-                <option value="virtual">Virtual Office</option>
-              </select>
-            </div>
           </div>
-
-          {/* Additional Filter Options */}
-          {/* <div className="mt-6 pt-6 border-t border-gray-200">
-            <div className="flex flex-wrap gap-4">
-              {[
-                { id: "available", label: "Tersedia Sekarang" },
-                { id: "wifi", label: "WiFi Gratis" },
-              ].map((filter) => (
-                <div key={filter.id} className="flex items-center">
-                  <input
-                    type="checkbox"
-                    id={filter.id}
-                    checked={additionalFilters[filter.id]}
-                    onChange={() => handleAdditionalFilterChange(filter.id)}
-                    className="w-4 h-4 text-[#0A2463] rounded focus:ring-[#0A2463] cursor-pointer"
-                  />
-                  <label
-                    htmlFor={filter.id}
-                    className="ml-2 text-sm text-gray-700 cursor-pointer"
-                  >
-                    {filter.label}
-                  </label>
-                </div>
-              ))}
-            </div>
-          </div> */}
         </div>
 
         {/* Active Filters Display */}
@@ -647,34 +603,15 @@ export default function Browse() {
                   </span>
                 )
             )}
-            {/* {Object.entries(additionalFilters).map(
-              ([key, value]) =>
-                value && (
-                  <span
-                    key={key}
-                    className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm flex items-center gap-2"
-                  >
-                    {key === "available"
-                      ? "Tersedia Sekarang"
-                      : key === "wifi"
-                      ? "WiFi Gratis"
-                      : key === "parking"
-                      ? "Parkir Gratis"
-                      : "Kopi Gratis"}
-                    <button
-                      onClick={() => handleAdditionalFilterChange(key)}
-                      className="hover:text-red-600 font-bold"
-                    >
-                      ×
-                    </button>
-                  </span>
-                )
-            )} */}
           </div>
         )}
       </section>
+
       <BrowseCityWrapper />
-      <BrowseOfficeWrapper />
+      <BrowseOfficeWrapper
+        filters={filters}
+        isFilterApplied={isFilterApplied}
+      />
       <Footer />
     </>
   );
