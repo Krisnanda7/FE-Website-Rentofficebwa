@@ -110,9 +110,7 @@ export default function Browse() {
       },
       rating: {
         5: "5 Bintang",
-        4: "4+ Bintang",
-        3: "3+ Bintang",
-        2: "2+ Bintang",
+        4: "4 Bintang",
       },
       location: {
         jakarta: "Jakarta",
@@ -533,9 +531,7 @@ export default function Browse() {
               >
                 <option value="all">Semua Rating</option>
                 <option value="5">5 Bintang</option>
-                <option value="4">4+ Bintang</option>
-                <option value="3">3+ Bintang</option>
-                <option value="2">2+ Bintang</option>
+                <option value="4">4 Bintang</option>
               </select>
             </div>
 

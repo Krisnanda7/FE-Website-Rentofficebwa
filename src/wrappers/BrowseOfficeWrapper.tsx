@@ -82,10 +82,11 @@ export default function BrowseOfficeWrapper({
 
     // Filter by rating
     if (filters.rating !== "all") {
-      const minRating = parseInt(filters.rating);
+      const targetRating = parseInt(filters.rating);
       result = result.filter((office) => {
         const rating = office.rating || 0;
-        return rating >= minRating;
+        // Exact match untuk rating 4 atau 5
+        return Math.floor(rating) === targetRating;
       });
     }
 
