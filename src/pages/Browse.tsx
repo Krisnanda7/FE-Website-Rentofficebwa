@@ -514,8 +514,7 @@ export default function Browse() {
                 <option value="medium">Sedang</option>
                 <option value="expensive">Termahal</option>
                 <option value="range1">Dibawah 3 Juta</option>
-                <option value="range2">2-3 Juta</option>
-                <option value="range3">Diatas 3 Juta</option>
+                <option value="range2">3 Juta Keatas</option>
               </select>
             </div>
 

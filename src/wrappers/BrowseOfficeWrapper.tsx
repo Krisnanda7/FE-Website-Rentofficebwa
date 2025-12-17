@@ -71,9 +71,7 @@ export default function BrowseOfficeWrapper({
           case "range1":
             return price < 3000000;
           case "range2":
-            return price >= 2000000 && price <= 3000000;
-          case "range3":
-            return price > 3000000;
+            return price >= 3000000;
           default:
             return true;
         }
