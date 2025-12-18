@@ -118,6 +118,8 @@ export default function Browse() {
         bandung: "Bandung",
         bali: "Bali",
         yogyakarta: "Yogyakarta",
+        magelang: "Magelang",
+        malang: "Malang",
       },
       type: {
         private: "Private Office",
@@ -569,6 +571,7 @@ export default function Browse() {
                 <option value="bali">Bali</option>
                 <option value="yogyakarta">Yogyakarta</option>
                 <option value="magelang">Magelang</option>
+                <option value="malang">Malang</option>
               </select>
             </div>
           </div>

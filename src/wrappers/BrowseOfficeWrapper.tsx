@@ -57,7 +57,6 @@ export default function BrowseOfficeWrapper({
       });
     }
 
-    // Filter by price
     if (filters.price !== "all") {
       result = result.filter((office) => {
         const price = office.price || 0;
@@ -78,17 +77,14 @@ export default function BrowseOfficeWrapper({
       });
     }
 
-    // Filter by rating
     if (filters.rating !== "all") {
       const targetRating = parseInt(filters.rating);
       result = result.filter((office) => {
         const rating = office.rating || 0;
-        // Exact match untuk rating 4 atau 5
         return Math.floor(rating) === targetRating;
       });
     }
 
-    // Sort
     switch (filters.sortBy) {
       case "newest":
         result.sort((a, b) => {
